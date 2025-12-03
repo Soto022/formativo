@@ -3,7 +3,7 @@ import Lightbox from '../Lightbox';
 
 // Importar las imágenes locales
 import afre from '../../assets/Zonotrichia/afre.JPG';
-import afrechero from '../../assets/Zonotrichia/Afrechero .JPG';
+import afrechero from '../../assets/Zonotrichia/Afrechero.JPG';
 import dscn0173 from '../../assets/Zonotrichia/DSCN0173.jpg';
 import dscn0187 from '../../assets/Zonotrichia/DSCN0187.jpg';
 import dscn0201 from '../../assets/Zonotrichia/DSCN0201.jpg';
