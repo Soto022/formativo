@@ -1,0 +1,7 @@
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
