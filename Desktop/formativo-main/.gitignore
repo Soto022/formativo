@@ -1,0 +1,18 @@
+# Archivos de configuracion de IDEs
+.vscode/
+.idea/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Dependencias y builds
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+frontend/dist/
+
+# Entorno y logs
+.env
+backend/.env
+npm-debug.log*
