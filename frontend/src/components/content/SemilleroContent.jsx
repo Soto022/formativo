@@ -30,7 +30,107 @@ export function SemilleroContent() {
 
   // --- Data Fetching ---
   const fetchSemilleroItems = async () => {
-// ... (el resto del código hasta handleEdit)
+    try {
+      const response = await fetch(API_URL);
+      if (!response.ok) {
+        throw new Error('Error al obtener los elementos del semillero.');
+      }
+      const data = await response.json();
+      setSemilleroItems(data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchSemilleroItems();
+  }, []);
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setForm({
+      ...form,
+      [name]: type === 'checkbox' ? checked : value,
+    });
+  };
+
+  const handleSubsectionChange = (index, e) => {
+    const { name, value } = e.target;
+    const subsections = [...form.subsections];
+    subsections[index][name] = value;
+    setForm({ ...form, subsections });
+  };
+
+  const addSubsection = () => {
+    setForm({
+      ...form,
+      subsections: [...form.subsections, { title: '', description: '' }],
+    });
+  };
+
+  const removeSubsection = (index) => {
+    const subsections = [...form.subsections];
+    subsections.splice(index, 1);
+    setForm({ ...form, subsections });
+  };
+
+  const handleImageChange = (e) => {
+    const files = Array.from(e.target.files);
+    setForm({
+      ...form,
+      filesToUpload: files,
+      images: files.map(file => URL.createObjectURL(file)),
+    });
+  };
+
+  const resetForm = () => {
+    setEditingItem(null);
+    setForm({
+      title: '',
+      description: '',
+      subsections: [],
+      images: [],
+      filesToUpload: [],
+      isArchived: false,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('title', form.title);
+    formData.append('description', form.description);
+    formData.append('subsections', JSON.stringify(form.subsections));
+    formData.append('isArchived', form.isArchived);
+    form.filesToUpload.forEach(file => {
+      formData.append('images', file);
+    });
+
+    const url = editingItem ? `${API_URL}/${editingItem._id}` : API_URL;
+    const method = editingItem ? 'PUT' : 'POST';
+
+    try {
+      const response = await fetch(url, {
+        method,
+        headers: {
+          'Authorization': `Bearer ${currentUser.token}`,
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al guardar el elemento.');
+      }
+
+      await fetchSemilleroItems();
+      resetForm();
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   const handleEdit = (item) => {
     resetForm();
     setEditingItem(item);
@@ -129,7 +229,13 @@ export function SemilleroContent() {
       {/* Listado de Elementos */}
       <div className="mt-8">
         <h4 className="text-lg font-semibold text-white mb-4">Elementos Existentes</h4>
-        <div className="overflow-x-auto"><table className="min-w-full divide-y divide-gray-700"><thead className="bg-gray-700"><tr><th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">Título</th><th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">Imágenes</th><th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">Estado</th><th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-300 uppercase">Acciones</th></tr></thead><tbody className="bg-gray-800 divide-y divide-gray-700">{semilleroItems.map((item) => (<tr key={item._id} className={item.isArchived ? 'opacity-50 bg-gray-900' : ''}><td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">{item.title}</td><td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{item.images.length} archivo(s)</td><td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{item.isArchived ? 'Archivado' : 'Activo'}</td><td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"><button onClick={() => handleEdit(item)} className="text-indigo-400 hover:text-indigo-600 mr-4">Editar</button><button onClick={() => handleArchiveToggle(item._id)} className={item.isArchived ? "text-green-400 hover:text-green-600 mr-4" : "text-yellow-400 hover:text-yellow-600 mr-4"}>{item.isArchived ? 'Desarchivar' : 'Archivar'}</button><button onClick={() => handleDelete(item._id)} className="text-red-400 hover:text-red-600">Eliminar</button></td></tr>))}</tbody></table></div>
+        <div className="overflow-x-auto">
+          {semilleroItems.length === 0 ? (
+            <p className="text-white text-center py-4">No hay elementos de semillero disponibles.</p>
+          ) : (
+            <table className="min-w-full divide-y divide-gray-700"><thead className="bg-gray-700"><tr><th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">Título</th><th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">Imágenes</th><th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase">Estado</th><th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-300 uppercase">Acciones</th></tr></thead><tbody className="bg-gray-800 divide-y divide-gray-700">{semilleroItems.map((item) => (<tr key={item._id} className={item.isArchived ? 'opacity-50 bg-gray-900' : ''}><td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">{item.title}</td><td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{item.images.length} archivo(s)</td><td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{item.isArchived ? 'Archivado' : 'Activo'}</td><td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"><button onClick={() => handleEdit(item)} className="text-indigo-400 hover:text-indigo-600 mr-4">Editar</button><button onClick={() => handleArchiveToggle(item._id)} className={item.isArchived ? "text-green-400 hover:text-green-600 mr-4" : "text-yellow-400 hover:text-yellow-600 mr-4"}>{item.isArchived ? 'Desarchivar' : 'Archivar'}</button><button onClick={() => handleDelete(item._id)} className="text-red-400 hover:text-red-600">Eliminar</button></td></tr>))}</tbody></table>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Lightbox from '../Lightbox';
 
 // Importar las imágenes locales
-import afre from '../../assets/Zonotrichia/afre.JPG';
-import afrechero from '../../assets/Zonotrichia/Afrechero.JPG';
-import dscn0173 from '../../assets/Zonotrichia/DSCN0173.jpg';
-import dscn0187 from '../../assets/Zonotrichia/DSCN0187.jpg';
-import dscn0201 from '../../assets/Zonotrichia/DSCN0201.jpg';
-import img5625 from '../../assets/Zonotrichia/IMG_5625.JPG';
-import img7548 from '../../assets/Zonotrichia/IMG_7548.jpg';
+import afre from '../../assets/zonotrichia/afre.JPG';
+import afrechero from '../../assets/zonotrichia/Afrechero.JPG';
+import dscn0173 from '../../assets/zonotrichia/DSCN0173.jpg';
+import dscn0187 from '../../assets/zonotrichia/DSCN0187.jpg';
+import dscn0201 from '../../assets/zonotrichia/DSCN0201.jpg';
+import img5625 from '../../assets/zonotrichia/IMG_5625.JPG';
+import img7548 from '../../assets/zonotrichia/IMG_7548.jpg';
 import zono from '../../assets/zonotrichia/zono.jpg';
 import zonootri from '../../assets/zonotrichia/zonootri.jpg';
 import zonot from '../../assets/zonotrichia/zonot.jpg';

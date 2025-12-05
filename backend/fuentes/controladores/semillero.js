@@ -8,7 +8,7 @@ import path from 'path';
 // @access  Public
 const obtenerSeccionesSemillero = async (req, res) => {
   try {
-    const filtro = req.query.incluirArchivadas === 'true' ? {} : { isArchived: false };
+    const filtro = {}; // Ignorar el filtro de isArchived temporalmente
     const secciones = await Semillero.find(filtro);
     res.status(200).json(secciones);
   } catch (error) {
