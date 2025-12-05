@@ -18,14 +18,14 @@ export default function BirdDetailModal({ isOpen, onClose, bird }) {
         </button>
 
         <div className="p-8">
-          <h2 className="text-3xl font-bold text-emerald-400 mb-4 text-center">{bird.nombre}</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-emerald-400 mb-4 text-center">{bird.nombre}</h2>
           
           <div className="flex justify-center mb-6">
             <img src={bird.imagen} alt={bird.nombre} className="max-w-full max-h-[70vh] object-contain rounded-lg border-2 border-emerald-500 mx-auto" />
           </div>
 
           <div className="text-white mb-6">
-            <h4 className="font-bold text-xl mb-2">Detalles:</h4>
+            <h4 className="font-bold text-lg sm:text-xl mb-2">Detalles:</h4>
             <p className="text-gray-300 mb-2"><span className="font-semibold">Familia:</span> {bird.familia}</p>
             <p className="text-gray-300 mb-2"><span className="font-semibold">Hábitat:</span> {bird.habitat}</p>
             <p className="text-gray-300 mb-2"><span className="font-semibold">Dieta:</span> {bird.dieta}</p>

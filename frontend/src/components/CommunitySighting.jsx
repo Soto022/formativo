@@ -73,10 +73,10 @@ const CommunitySighting = ({ onSightingSubmit, onSightingUpdate, editingSighting
 
   return (
     <div className="bg-gray-800 p-8 rounded-2xl shadow-2xl border border-gray-700/50">
-      <h3 className="text-3xl font-bold text-white mb-2">
+      <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
         {editingSighting ? 'Editar Avistamiento' : 'Comparte tu Avistamiento'}
       </h3>
-      <p className="text-md text-gray-400 mb-6">Hola, <span className="font-bold text-emerald-400">{currentUser.username}</span>. ¿Qué has visto hoy?</p>
+      <p className="text-sm sm:text-base text-gray-400 mb-6">Hola, <span className="font-bold text-emerald-400">{currentUser.username}</span>. ¿Qué has visto hoy?</p>
       
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="relative">

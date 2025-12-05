@@ -21,19 +21,19 @@ export function FamilyModal({ isOpen, onClose, family, openLightbox }) {
         </button>
 
         <div className="p-8">
-          <h2 className="text-4xl font-bold text-emerald-400 mb-4 text-center">{family.nombre}</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-400 mb-4 text-center">{family.nombre}</h2>
           
           <div className="text-center mb-6">
             <img src={family.logo} alt={`Logo de ${family.nombre}`} className="w-32 h-32 object-cover rounded-full border-4 border-emerald-500 mx-auto mb-6" />
             <div className="text-white">
-                <h4 className="font-bold text-lg">Descripción</h4>
+                <h4 className="font-bold text-base md:text-lg">Descripción</h4>
                 <p className="text-gray-300">{family.descripcion}</p>
             </div>
           </div>
 
           {/* Sección de Información Clave con Iconos (para la familia) */}
           <div className="my-6">
-            <h3 className="text-2xl font-semibold text-white mb-4 text-center">Información Clave de la Familia</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 text-center">Información Clave de la Familia</h3>
             <div className="flex justify-evenly text-white">
               
               {/* Estado de Conservación General */}
@@ -65,7 +65,7 @@ export function FamilyModal({ isOpen, onClose, family, openLightbox }) {
           {/* Galería de Aves Individuales */}
           {birdsInFamily.length > 0 && (
             <div className="mb-6">
-              <h3 className="text-2xl font-semibold text-white mb-4 text-center">Aves de esta familia:</h3>
+              <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 text-center">Aves de esta familia:</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {birdsInFamily.map((bird, index) => (
                   <div 

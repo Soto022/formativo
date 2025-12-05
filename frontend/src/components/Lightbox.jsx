@@ -53,7 +53,7 @@ export default function Lightbox({ data, onClose }) {
         />
         {isObject && (
           <div className="p-4 bg-gray-900/80 rounded-lg max-w-2xl w-full text-center text-white">
-            <h3 className="text-2xl font-bold text-emerald-400">{data.nombre}</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-emerald-400">{data.nombre}</h3>
             {data.habitat && <p className="mt-2 text-gray-300"><span className="font-bold text-gray-100">Hábitat:</span> {data.habitat}</p>}
             {data.dieta && <p className="mt-1 text-gray-300"><span className="font-bold text-gray-100">Dieta:</span> {data.dieta}</p>}
             {data.conservacion && <p className="mt-1 text-gray-300"><span className="font-bold text-gray-100">Conservación:</span> {data.conservacion}</p>}

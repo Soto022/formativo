@@ -168,16 +168,16 @@ const ContentSection = ({ section, index, openLightbox }) => {
           <img 
             src={section.image} 
             alt={section.alt}
-            className="rounded-lg shadow-2xl object-cover w-full h-80 transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+            className="rounded-lg shadow-2xl object-cover w-full h-64 sm:h-72 md:h-80 transform hover:scale-105 transition-transform duration-300 cursor-pointer"
             onClick={() => openLightbox({ src: section.image, alt: section.alt })}
           />
         </div>
         {/* Columna de texto */}
         <div className="w-full md:w-1/2">
-          <h2 className="text-3xl font-bold mb-6 text-emerald-300 leading-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-emerald-300 leading-tight">
             {section.title}
           </h2>
-          <ul className="list-none space-y-4 text-lg text-gray-300">
+          <ul className="list-none space-y-4 text-base md:text-lg text-gray-300">
             {section.content.map((item, i) => (
               <li key={i} className="flex items-start">
                 <span className="text-emerald-400 mr-3 mt-1">✔</span>
@@ -194,7 +194,7 @@ const ContentSection = ({ section, index, openLightbox }) => {
 export function PlanetaVivo({ openLightbox }) {
   return (
     <div className="container mx-auto p-4 md:p-8 bg-gray-900 text-gray-100 max-w-5xl">
-      <h1 className="text-5xl font-extrabold text-center text-emerald-400 mb-12 md:mb-20 pb-4 border-b-4 border-emerald-600 tracking-tight">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-center text-emerald-400 mb-12 md:mb-20 pb-4 border-b-4 border-emerald-600 tracking-tight">
           Planeta Vivo
       </h1>
       

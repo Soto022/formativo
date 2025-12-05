@@ -23,61 +23,33 @@ import CommunitySighting from '../components/CommunitySighting';
 // --- Hero Section Component ---
 
 const HeroSection = ({ heroData }) => {
-
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
-
-
   return (
-
-    <section ref={ref} className="relative h-[70vh] min-h-[500px] text-white flex flex-col justify-center items-center text-center p-8 overflow-hidden">
-
+    <section ref={ref} className="relative min-h-[50vh] md:h-[70vh] min-w-full text-white flex flex-col justify-center items-center text-center px-4 py-8 md:px-8 md:py-16 overflow-hidden">
       {/* Background Image */}
-
       <div
-
         className="absolute inset-0 bg-cover bg-center"
-
         style={{ backgroundImage: `url(${fondoHome})` }}
-
       >
-
         <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay for text readability */}
-
       </div>
-
       <div className={`relative z-10 transition-all duration-1000 ease-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
-
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
           {heroData?.title}
-
         </h1>
-
-        <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-200 mb-8">
-
+        <p className="max-w-3xl mx-auto text-base md:text-lg lg:text-xl text-gray-200 mb-8">
           {heroData?.description}
-
         </p>
-
         <a
-
           href="#explorar"
-
           className="bg-emerald-500 text-white font-bold text-lg py-3 px-8 rounded-full hover:bg-emerald-600 transition-transform duration-300 ease-in-out hover:scale-105 shadow-lg"
-
         >
-
           Explorar Ahora
-
         </a>
-
       </div>
-
     </section>
-
   );
-
 };
 
 const formatDate = (dateString) => {
@@ -162,7 +134,7 @@ const SectionsExplorer = ({ explorerSections, adminSection }) => {
 
       <div className="max-w-6xl mx-auto">
 
-        <h2 className="text-3xl font-bold text-center mb-12 text-white">Explora Nuestras Secciones</h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 text-white">Explora Nuestras Secciones</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -180,7 +152,7 @@ const SectionsExplorer = ({ explorerSections, adminSection }) => {
 
                     {IconComponent && <IconComponent size={32} className="mx-auto mb-3 text-emerald-400" />} {/* Renderizar el icono */}
 
-                    <h3 className="text-2xl font-bold text-emerald-400 mb-2">{section.label}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold text-emerald-400 mb-2">{section.label}</h3>
 
                     <p className="text-gray-400">{section.description}</p>
 
@@ -220,7 +192,7 @@ const FeaturedGallery = ({ openLightbox }) => {
 
       <div className="max-w-7xl mx-auto">
 
-        <h2 className="text-4xl font-bold text-center mb-12 text-white">Galería Destacada</h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 text-white">Galería Destacada</h2>
 
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
@@ -247,7 +219,9 @@ const FeaturedGallery = ({ openLightbox }) => {
 const AveCard = ({ ave, openLightbox }) => (
 
   <div 
-    className="group h-80 w-full [perspective:1000px] cursor-pointer"
+
+    className="group h-72 sm:h-80 w-full [perspective:1000px] cursor-pointer"
+
     onClick={() => openLightbox({
 
       images: [ave.imagen],
@@ -270,7 +244,7 @@ const AveCard = ({ ave, openLightbox }) => (
 
         <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-black/20 flex items-end p-6">
 
-          <h2 className="text-white text-2xl font-bold tracking-wide">{ave.nombre}</h2>
+          <h2 className="text-xl md:text-2xl font-bold tracking-wide">{ave.nombre}</h2>
 
         </div>
 
@@ -282,11 +256,11 @@ const AveCard = ({ ave, openLightbox }) => (
 
         <div className="flex min-h-full flex-col items-center justify-center">
 
-          <h2 className="text-2xl font-bold text-white">{ave.nombre}</h2>
+          <h2 className="text-xl md:text-2xl font-bold text-white">{ave.nombre}</h2>
 
-          <p className="text-base italic text-cyan-400 mt-1">{ave.nombreCientifico}</p>
+          <p className="text-sm md:text-base italic text-cyan-400 mt-1">{ave.nombreCientifico}</p>
 
-          <p className="mt-4 text-base text-gray-300">{ave.descripcion}</p>
+          <p className="mt-4 text-sm md:text-base text-gray-300">{ave.descripcion}</p>
 
         </div>
 
@@ -462,7 +436,7 @@ export function Home({ openLightbox }) {
         {/* --- Sección de Avistamientos Comunitarios --- */}
         <section id="community-sightings" className="py-20 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-white mb-12 text-center">Rincón del Observador</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12 text-center">Rincón del Observador</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
               <div className="lg:col-span-1">
                 {isAuthenticated ? (

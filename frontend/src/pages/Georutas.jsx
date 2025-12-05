@@ -104,7 +104,7 @@ function RouteInfoBox({ route, onBack, onCenter }) {
     <div className="animate-fade-in h-full flex flex-col">
       <div className="bg-gray-800/50 border border-emerald-500/20 rounded-lg p-6 mb-6">
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-2xl font-bold text-emerald-400">🗺️ {route.nombre}</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-emerald-400">🗺️ {route.nombre}</h3>
           <button
             onClick={onBack}
             className="text-gray-400 hover:text-white transition-colors"
@@ -233,10 +233,10 @@ export default function Georutas() {
     <div className="bg-gray-900 min-h-screen -m-4 py-4 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
             Nuestras <span className="text-emerald-400">GeoRutas</span>
           </h1>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-400">
+          <p className="mt-4 max-w-3xl mx-auto text-base md:text-lg text-gray-400">
             Sumérgete en un viaje interactivo por las rutas de aviturismo de Caldas.
           </p>
         </div>
@@ -245,7 +245,7 @@ export default function Georutas() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             
             {/* Map Column */}
-            <div className="lg:col-span-3 h-[500px] lg:h-[600px] rounded-lg overflow-hidden border border-gray-700">
+            <div className="lg:col-span-3 h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] rounded-lg overflow-hidden border border-gray-700">
               <MapContainer
                 center={[5.07, -75.52]}
                 zoom={9}
@@ -304,7 +304,7 @@ export default function Georutas() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <h3 className="mt-2 text-xl font-bold text-white">Explora las Rutas</h3>
+                    <h3 className="mt-2 text-lg md:text-xl font-bold text-white">Explora las Rutas</h3>
                     <p className="mt-1 text-sm text-gray-400">
                       Pasa el cursor sobre una ruta para previsualizarla en el mapa o haz clic para ver sus detalles.
                     </p>
@@ -331,7 +331,7 @@ export default function Georutas() {
                         >
                           <div className="flex justify-between items-center">
                             <div className="text-left">
-                              <h4 className="font-bold text-lg text-emerald-100 group-hover:text-white">
+                              <h4 className="font-bold text-base md:text-lg text-emerald-100 group-hover:text-white">
                                 {ruta.nombre}
                               </h4>
                               <p className="text-sm text-gray-400 mt-1">

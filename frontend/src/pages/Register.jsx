@@ -42,8 +42,8 @@ const Register = () => {
         <div className="bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl p-8">
           <div className="text-center mb-8">
             <Bird className="mx-auto h-12 w-12 text-emerald-400" />
-            <h1 className="text-3xl font-bold mt-4">Crear una Cuenta</h1>
-            <p className="text-gray-400 mt-2">Únete a la comunidad de observadores de aves.</p>
+            <h1 className="text-2xl sm:text-3xl font-bold mt-4">Crear una Cuenta</h1>
+            <p className="text-sm sm:text-base text-gray-400 mt-2">Únete a la comunidad de observadores de aves.</p>
           </div>
           
           <form onSubmit={handleRegister} className="space-y-6">

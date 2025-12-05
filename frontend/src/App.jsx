@@ -204,7 +204,7 @@ const AppContent = () => {
               logout={logout}
             />
 
-            <main className="flex-1 p-4">
+            <main className="flex-1">
               <Routes>
                 <Route path="/" element={<Home darkMode={darkMode} openLightbox={openLightbox} />} />
                 <Route path="/ecoalas" element={<EcoAlas openLightbox={openLightbox} />} />

@@ -123,7 +123,7 @@ const ContentSection = ({ section, index, onImageClick }) => {
   return (
     <section className="my-12 md:my-20">
       <div className={`flex flex-col md:flex-row items-center gap-10 ${!isImageLeft ? 'md:flex-row-reverse' : ''}`}>
-        <div className="w-full md:w-1/2" style={{height: '30rem'}}>
+        <div className="w-full md:w-1/2 h-64 sm:h-72 md:h-80 lg:h-[30rem]">
           <img 
             src={section.image} 
             alt={section.alt}
@@ -132,10 +132,10 @@ const ContentSection = ({ section, index, onImageClick }) => {
           />
         </div>
         <div className="w-full md:w-1/2">
-          <h2 className="text-3xl font-bold mb-6 text-emerald-300 leading-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-emerald-300 leading-tight">
             {section.title}
           </h2>
-          <div className="list-none space-y-4 text-lg text-gray-300" dangerouslySetInnerHTML={{ __html: section.content.join('') }} />
+          <div className="list-none space-y-4 text-base md:text-lg text-gray-300" dangerouslySetInnerHTML={{ __html: section.content.join('') }} />
         </div>
       </div>
     </section>
@@ -155,7 +155,7 @@ export default function ZonotrichiaContent() {
 
   return (
     <div className="container mx-auto p-4 md:p-8 bg-gray-900 text-gray-100 max-w-5xl">
-      <h1 className="text-5xl font-extrabold text-center text-emerald-400 mb-12 md:mb-20 pb-4 border-b-4 border-emerald-600 tracking-tight">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-center text-emerald-400 mb-12 md:mb-20 pb-4 border-b-4 border-emerald-600 tracking-tight">
           Zonotrichia capensis
       </h1>
       

@@ -111,13 +111,13 @@ export default function EcoAlas({ openLightbox }) {
         {/* Featured Bird Section */}
         {featuredBird && (
           <div className="mb-12 rounded-lg bg-gray-900/80 backdrop-blur-sm border border-emerald-500/50 p-6 md:p-8 flex flex-col md:flex-row items-center gap-8 shadow-2xl">
-            <div className="md:w-1/2 w-full h-72 bg-black/30 rounded-lg flex items-center justify-center p-2">
+            <div className="md:w-1/2 w-full h-64 sm:h-72 bg-black/30 rounded-lg flex items-center justify-center p-2">
               <img src={featuredBird.src} alt={featuredBird.description} className="max-w-full max-h-full object-contain" />
             </div>
             <div className="md:w-1/2 w-full text-white">
               <h3 className="text-base uppercase text-emerald-400 font-bold tracking-wider">Especie Destacada</h3>
-              <h1 className="text-4xl lg:text-5xl font-bold text-white my-2">{featuredBird.description}</h1>
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white my-2">{featuredBird.description}</h1>
+              <p className="text-base md:text-lg text-gray-300 leading-relaxed">
                 {featuredBird.familyFact}
               </p>
             </div>
@@ -170,7 +170,7 @@ export default function EcoAlas({ openLightbox }) {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             {uniqueHabitats.length > 0 && (
               <div className="flex items-center gap-3 w-full sm:w-auto">
-                <label htmlFor="habitat-select" className="text-white font-semibold text-lg">Hábitat:</label>
+                <label htmlFor="habitat-select" className="text-white font-semibold text-base md:text-lg">Hábitat:</label>
                 <select
                   id="habitat-select"
                   value={selectedHabitat}
@@ -188,7 +188,7 @@ export default function EcoAlas({ openLightbox }) {
 
             {uniqueConservations.length > 0 && (
               <div className="flex items-center gap-3 w-full sm:w-auto">
-                <label htmlFor="conservation-select" className="text-white font-semibold text-lg">Conservación:</label>
+                <label htmlFor="conservation-select" className="text-white font-semibold text-base md:text-lg">Conservación:</label>
                 <select
                   id="conservation-select"
                   value={selectedConservation}
@@ -223,7 +223,7 @@ export default function EcoAlas({ openLightbox }) {
                 </div>
               )}
               <div className="p-4 flex-grow flex flex-col items-center justify-center">
-                <h2 className="text-xl font-bold text-emerald-400 mb-2 text-center">{familia.nombre}</h2>
+                <h2 className="text-lg md:text-xl font-bold text-emerald-400 mb-2 text-center">{familia.nombre}</h2>
               </div>
             </div>
           ))}

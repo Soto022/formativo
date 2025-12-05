@@ -67,7 +67,7 @@ const SemilleroFormModal = ({ isOpen, onClose, onSave, initialData, itemType }) 
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50 p-4">
       <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md flex flex-col max-h-[90vh]">
-        <h2 className="text-2xl font-bold text-white mb-4 flex-shrink-0">{initialData ? 'Editar' : 'Agregar'} {itemType === 'eventos_investigacion' ? 'Evento' : 'Salida de Campo'}</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex-shrink-0">{initialData ? 'Editar' : 'Agregar'} {itemType === 'eventos_investigacion' ? 'Evento' : 'Salida de Campo'}</h2>
         <div className="overflow-y-auto">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
