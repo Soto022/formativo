@@ -1,5 +1,25 @@
 // src/data/rutas.js
 // Datos + utilidades para Georutas (Leaflet + compartir en Google Maps / Waze)
+import BosquesChecCedral01WladimirG from '../assets/localidades/Bosques-Chec-Cedral-01-WladimirG.jpg';
+import BosquesdelaPraderaWladimirGiraldo from '../assets/localidades/Bosques-de-la-Pradera-WladimirGiraldo.jpg';
+import CantaresReservaNatural01 from '../assets/localidades/Cantares-Reserva-Natural-01.jpg';
+import ElColordeMisReves02 from '../assets/localidades/El-Color-de-Mis-Reves-02.jpg';
+import EmbalseLaEsmeralda from '../assets/localidades/Embalse-La-Esmeralda.jpg';
+import FincaDemostrativaDonMiguel from '../assets/localidades/Finca-Demostrativa-Don-Miguel.jpg';
+import FincaRomelia from '../assets/localidades/Finca-Romelia.jpg';
+import HaciendaelBosque01 from '../assets/localidades/Hacienda-el-Bosque-01.jpg';
+import HaciendaVenecia01 from '../assets/localidades/Hacienda-Venecia-01.jpg';
+import KairiLodge010 from '../assets/localidades/Kairi-Lodge-010.jpg';
+import LodgeParaisoVerde09WladimirG from '../assets/localidades/Lodge-Paraiso-Verde-09-WladimirG.jpg';
+import NevadodelRuizBrisasWladimirG01 from '../assets/localidades/Nevado-del-Ruiz-Brisas-WladimirG-01.jpg';
+import OwlWatch01 from '../assets/localidades/Owl-Watch-01.jpg';
+import RecintodePensamietno from '../assets/localidades/Recinto-de-Pensamietno.jpg';
+import ReservaNaturalLicoreraCaldas08 from '../assets/localidades/Reserva-Natural-Licorera-Caldas-08.jpg';
+import RioBlancoReservaNatural01bWladimirG from '../assets/localidades/Rio-Blanco-Reserva-Natural-01b-WladimirG.jpg';
+import RioclaroLaSoledadWladimirGiraldo from '../assets/localidades/Rioclaro-LaSoledad-WladimirGiraldo.jpg';
+import TermalesElRuiz07WladimrG from '../assets/localidades/Termales-ElRuiz-07-WladimrG.jpg';
+import TinamuBirdingNatureReserve from '../assets/localidades/Tinamu-Birding-Nature-Reserve.jpg';
+import TominejoEcolodge021 from '../assets/localidades/Tominejo-Ecolodge-02-1.jpg';
 
 // --- Helpers ---
 function toRad(deg) {
@@ -98,6 +118,26 @@ const rawRutas = [
     aves: "Pava caucana, búhos, carpinteros",
     horario: "5:30 am - 9:00 am",
   },
+  { id: 4, nombre: "Bosques Chec Cedral", imagen: BosquesChecCedral01WladimirG, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 5, nombre: "Bosques de la Pradera", imagen: BosquesdelaPraderaWladimirGiraldo, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 6, nombre: "Cantares Reserva Natural", imagen: CantaresReservaNatural01, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 7, nombre: "El Color de Mis Reves", imagen: ElColordeMisReves02, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 8, nombre: "Embalse La Esmeralda", imagen: EmbalseLaEsmeralda, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 9, nombre: "Finca Demostrativa Don Miguel", imagen: FincaDemostrativaDonMiguel, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 10, nombre: "Finca Romelia", imagen: FincaRomelia, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 11, nombre: "Hacienda el Bosque", imagen: HaciendaelBosque01, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 12, nombre: "Hacienda Venecia", imagen: HaciendaVenecia01, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 13, nombre: "Kairi Lodge", imagen: KairiLodge010, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 14, nombre: "Lodge Paraiso Verde", imagen: LodgeParaisoVerde09WladimirG, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 15, nombre: "Nevado del Ruiz Brisas", imagen: NevadodelRuizBrisasWladimirG01, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 16, nombre: "Owl Watch", imagen: OwlWatch01, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 17, nombre: "Recinto de Pensamiento", imagen: RecintodePensamietno, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 18, nombre: "Reserva Natural Licorera Caldas", imagen: ReservaNaturalLicoreraCaldas08, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 19, nombre: "Rio Blanco Reserva Natural", imagen: RioBlancoReservaNatural01bWladimirG, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 20, nombre: "Rioclaro La Soledad", imagen: RioclaroLaSoledadWladimirGiraldo, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 21, nombre: "Termales El Ruiz", imagen: TermalesElRuiz07WladimrG, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 22, nombre: "Tinamu Birding Nature Reserve", imagen: TinamuBirdingNatureReserve, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" },
+  { id: 23, nombre: "Tominejo Ecolodge", imagen: TominejoEcolodge021, coords: [], terreno: "Por definir", aves: "Por definir", horario: "Por definir" }
 ];
 
 // --- Añade campos calculados (km) y exporta ---

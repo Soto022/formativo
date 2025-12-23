@@ -1,4 +1,3 @@
-// src/pages/Georutas.jsx
 import { useState, useEffect } from "react";
 import {
   MapContainer,
@@ -10,6 +9,7 @@ import {
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import { rutas as allRutas } from '../data/rutas';
 
 // Fix for default Leaflet icon path issues with bundlers
 delete L.Icon.Default.prototype._getIconUrl;
@@ -26,6 +26,50 @@ const mainIcon = L.divIcon({
   iconSize: [20, 20],
   iconAnchor: [10, 10],
 });
+
+// New component for the image-based localities gallery
+function LocalidadesGallery() {
+  const localidades = allRutas.filter(r => r.imagen);
+
+  if (localidades.length === 0) return null;
+
+  return (
+    <div className="mt-16">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+          Otras <span className="text-emerald-400">Localidades de Interés</span>
+        </h2>
+        <p className="mt-4 max-w-3xl mx-auto text-base md:text-lg text-gray-400">
+          Explora más destinos destacados para el avistamiento de aves en la región.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {localidades.map((ruta) => (
+          <div 
+            key={ruta.id} 
+            className="group relative bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg hover:shadow-emerald-400/30 transition-shadow duration-300"
+          >
+            <div className="w-full h-48 overflow-hidden">
+                <img 
+                  src={ruta.imagen}
+                  alt={`Imagen de ${ruta.nombre}`} 
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 bg-gray-700"
+                />
+            </div>
+            <div className="p-4">
+              <h3 className="text-lg font-bold text-emerald-400">{ruta.nombre}</h3>
+              <p className="text-sm text-gray-400 mt-2">
+                Localidad destacada
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// (The rest of the original file remains unchanged)
 
 // Auto-fit component to nicely frame the selected route or default bounds
 function MapAutoFit({ coords }) {
@@ -351,6 +395,8 @@ export default function Georutas() {
             </div>
           </div>
         </div>
+        {/* Here we inject the new gallery */}
+        <LocalidadesGallery />
       </div>
     </div>
   );
